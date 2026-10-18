@@ -16,13 +16,15 @@ The defaults follow the supplied rules: 6 quiz rounds plus a final round, 10 sec
 
 Question management is on its own page at `?view=bank`. Use the **Question bank** button in the top bar. Add questions one at a time, import a combined CSV/JSON bank, browse by round, or download an export. Tags must be unique within a round. The bank supports up to 10,000 questions per round, split across either five levels of 2,000 or two levels of 5,000.
 
+The shared project is seeded with 120 starter questions (20 per round). Add or import more through the question bank when you are ready.
+
 ## Shared Supabase setup
 
-The app is set up to use the new EGSQuizIt Supabase project. The project URL is in `supabase-config.js`; place only its **publishable** key in that file. Never put a service-role or secret key in this public website.
+The app is connected to the new EGSQuizIt Supabase project (`xikglhqvmsvywmenvywl`). Its URL and **publishable** key are already in `supabase-config.js`. Never put a service-role or secret key in this public website. The database tables, row-level security, Realtime publication, default scoring state, and 120 starter questions have already been applied to that project.
 
 The database migration is `supabase/migrations/20261018010000_question_draw_shared_arena.sql`. It creates separate `quizit_*` tables, leaves the old `quiz_state` table alone, enables row-level security, and seeds the starter questions and default scoring state. Question text, draw history, teams, scoring rules, and scores sync through Supabase Realtime. Answer keys are stored in a separate admin-only table.
 
-Create an administrator user in Supabase Authentication, then grant that user the `admin` app-metadata role in the Supabase SQL editor. Replace the email below with the administrator’s sign-in email:
+Create the first administrator user in Supabase Dashboard → Authentication → Users → Add user. Use the email and password the quiz operator will sign in with. Then open SQL Editor and grant that user the `admin` app-metadata role. Replace the example email below with the administrator’s sign-in email and run this once:
 
 ```sql
 update auth.users
@@ -30,9 +32,9 @@ set raw_app_meta_data = coalesce(raw_app_meta_data, '{}'::jsonb) || '{"role":"ad
 where email = 'quiz-admin@example.com';
 ```
 
-The app checks `app_metadata.role`; it does not accept a user-editable profile field as authorization. Keep public sign-ups disabled unless you have a separate reason to allow them. Other visitors can view the shared question and scores but cannot draw, score, or edit the bank.
+The app checks `app_metadata.role`; it does not accept a user-editable profile field as authorization. Sign in to the arena with that account to draw questions, score, change teams, or edit the bank. Keep public sign-ups disabled unless you have a separate reason to allow them. Other visitors can view the shared question and scores but cannot draw, score, or edit the bank.
 
-Until a publishable key is configured and the migration has run, the app remains in local preview mode and will not sync across devices.
+The app uses shared Supabase data when opened from a hosted site or `localhost`. A `file://` tab may block browser authentication and Realtime; use the hosted GitHub Pages URL when operating across devices.
 
 ## Deploy
 

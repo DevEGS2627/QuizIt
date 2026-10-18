@@ -31,6 +31,7 @@ create table if not exists public.quizit_draws (
 );
 create unique index if not exists quizit_one_active_draw_per_tag on public.quizit_draws(round,tag_key) where active;
 create index if not exists quizit_draws_round_time_idx on public.quizit_draws(round,time desc);
+create index if not exists quizit_draws_question_id_idx on public.quizit_draws(question_id);
 
 create table if not exists public.quizit_live_state (
   id text primary key check (id = 'main'),
@@ -58,7 +59,12 @@ grant select, insert, update, delete on public.quizit_question_answers to authen
 drop policy if exists quizit_questions_public_read on public.quizit_questions;
 create policy quizit_questions_public_read on public.quizit_questions for select to anon, authenticated using (true);
 drop policy if exists quizit_questions_admin_write on public.quizit_questions;
-create policy quizit_questions_admin_write on public.quizit_questions for all to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+drop policy if exists quizit_questions_admin_insert on public.quizit_questions;
+drop policy if exists quizit_questions_admin_update on public.quizit_questions;
+drop policy if exists quizit_questions_admin_delete on public.quizit_questions;
+create policy quizit_questions_admin_insert on public.quizit_questions for insert to authenticated with check ((select public.quizit_is_admin()));
+create policy quizit_questions_admin_update on public.quizit_questions for update to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+create policy quizit_questions_admin_delete on public.quizit_questions for delete to authenticated using ((select public.quizit_is_admin()));
 
 drop policy if exists quizit_answers_admin_only on public.quizit_question_answers;
 create policy quizit_answers_admin_only on public.quizit_question_answers for all to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
@@ -66,12 +72,22 @@ create policy quizit_answers_admin_only on public.quizit_question_answers for al
 drop policy if exists quizit_draws_public_read on public.quizit_draws;
 create policy quizit_draws_public_read on public.quizit_draws for select to anon, authenticated using (true);
 drop policy if exists quizit_draws_admin_write on public.quizit_draws;
-create policy quizit_draws_admin_write on public.quizit_draws for all to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+drop policy if exists quizit_draws_admin_insert on public.quizit_draws;
+drop policy if exists quizit_draws_admin_update on public.quizit_draws;
+drop policy if exists quizit_draws_admin_delete on public.quizit_draws;
+create policy quizit_draws_admin_insert on public.quizit_draws for insert to authenticated with check ((select public.quizit_is_admin()));
+create policy quizit_draws_admin_update on public.quizit_draws for update to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+create policy quizit_draws_admin_delete on public.quizit_draws for delete to authenticated using ((select public.quizit_is_admin()));
 
 drop policy if exists quizit_live_state_public_read on public.quizit_live_state;
 create policy quizit_live_state_public_read on public.quizit_live_state for select to anon, authenticated using (true);
 drop policy if exists quizit_live_state_admin_write on public.quizit_live_state;
-create policy quizit_live_state_admin_write on public.quizit_live_state for all to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+drop policy if exists quizit_live_state_admin_insert on public.quizit_live_state;
+drop policy if exists quizit_live_state_admin_update on public.quizit_live_state;
+drop policy if exists quizit_live_state_admin_delete on public.quizit_live_state;
+create policy quizit_live_state_admin_insert on public.quizit_live_state for insert to authenticated with check ((select public.quizit_is_admin()));
+create policy quizit_live_state_admin_update on public.quizit_live_state for update to authenticated using ((select public.quizit_is_admin())) with check ((select public.quizit_is_admin()));
+create policy quizit_live_state_admin_delete on public.quizit_live_state for delete to authenticated using ((select public.quizit_is_admin()));
 
 insert into public.quizit_live_state(id,state) values ('main', jsonb_build_object(
   'teams',jsonb_build_array('Team 1','Team 2','Team 3','Team 4','Team 5','Team 6'),
