@@ -1,0 +1,742 @@
+[
+  {
+    "round": "Science",
+    "tag": "SCI-001",
+    "question": "Which planet is known as the Red Planet?",
+    "answer": "Mars"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-002",
+    "question": "What is the chemical symbol for gold?",
+    "answer": "Au"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-003",
+    "question": "Which gas do plants absorb during photosynthesis?",
+    "answer": "Carbon dioxide"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-004",
+    "question": "What is the largest organ of the human body?",
+    "answer": "The skin"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-005",
+    "question": "How many bones are there in an adult human body?",
+    "answer": "206"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-006",
+    "question": "What is the SI unit of force?",
+    "answer": "Newton"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-007",
+    "question": "Which part of a plant cell contains chlorophyll?",
+    "answer": "Chloroplast"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-008",
+    "question": "At sea level, what is the boiling point of water in degrees Celsius?",
+    "answer": "100°C"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-009",
+    "question": "What is the closest star to Earth?",
+    "answer": "The Sun"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-010",
+    "question": "Which blood cells help the body fight infections?",
+    "answer": "White blood cells"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-011",
+    "question": "What is the process by which liquid water changes into water vapour?",
+    "answer": "Evaporation"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-012",
+    "question": "Which planet has the most prominent ring system?",
+    "answer": "Saturn"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-013",
+    "question": "What is the pH of a neutral solution at room temperature?",
+    "answer": "7"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-014",
+    "question": "Which vitamin can the human body make when skin is exposed to sunlight?",
+    "answer": "Vitamin D"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-015",
+    "question": "What is the name of the force that pulls objects toward Earth?",
+    "answer": "Gravity"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-016",
+    "question": "Which organ pumps blood around the human body?",
+    "answer": "The heart"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-017",
+    "question": "What is the hardest naturally occurring substance?",
+    "answer": "Diamond"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-018",
+    "question": "What is the smallest unit of an element that retains its chemical properties?",
+    "answer": "An atom"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-019",
+    "question": "Which gas makes up most of Earth’s atmosphere?",
+    "answer": "Nitrogen"
+  },
+  {
+    "round": "Science",
+    "tag": "SCI-020",
+    "question": "What type of energy does a moving object possess?",
+    "answer": "Kinetic energy"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-001",
+    "question": "How many players from one team are on the court in a basketball game?",
+    "answer": "5"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-002",
+    "question": "How many rings appear on the Olympic symbol?",
+    "answer": "5"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-003",
+    "question": "In which sport is the term “love” used for a score of zero?",
+    "answer": "Tennis"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-004",
+    "question": "How many players are on the field for one football (soccer) team at the start of a match?",
+    "answer": "11"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-005",
+    "question": "Which country hosts the Wimbledon tennis championships?",
+    "answer": "The United Kingdom (England)"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-006",
+    "question": "In cricket, how many runs are scored when the ball reaches the boundary without bouncing?",
+    "answer": "6"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-007",
+    "question": "What is the name of the trophy awarded to the winner of the men’s FIFA World Cup?",
+    "answer": "The FIFA World Cup Trophy"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-008",
+    "question": "Which sport uses a shuttlecock?",
+    "answer": "Badminton"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-009",
+    "question": "How many squares are there on a standard chessboard?",
+    "answer": "64"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-010",
+    "question": "In which sport would you perform a slam dunk?",
+    "answer": "Basketball"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-011",
+    "question": "What is the maximum score with one dart in a standard game of darts?",
+    "answer": "60"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-012",
+    "question": "Which track-and-field event combines running, jumping, and throwing across ten events?",
+    "answer": "Decathlon"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-013",
+    "question": "How many players from one team are on court in indoor volleyball?",
+    "answer": "6"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-014",
+    "question": "What colour card sends a player off in association football?",
+    "answer": "Red"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-015",
+    "question": "Which sport is played at the Tour de France?",
+    "answer": "Road cycling"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-016",
+    "question": "How many minutes are in a regulation rugby union match, excluding added time?",
+    "answer": "80"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-017",
+    "question": "Which Indian city is home to the Eden Gardens cricket stadium?",
+    "answer": "Kolkata"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-018",
+    "question": "What is the central object hit back and forth in table tennis called?",
+    "answer": "A ball"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-019",
+    "question": "In which sport do competitors compete for the Ashes?",
+    "answer": "Cricket"
+  },
+  {
+    "round": "Sports",
+    "tag": "SPT-020",
+    "question": "What is the name of the area from which a golfer starts each hole?",
+    "answer": "The tee (teeing area)"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-001",
+    "question": "What is the capital city of Japan?",
+    "answer": "Tokyo"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-002",
+    "question": "Which is the largest ocean on Earth?",
+    "answer": "The Pacific Ocean"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-003",
+    "question": "How many sides does a hexagon have?",
+    "answer": "6"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-004",
+    "question": "What is the currency of the United Kingdom?",
+    "answer": "The pound sterling"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-005",
+    "question": "Which language has the most native speakers worldwide?",
+    "answer": "Mandarin Chinese"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-006",
+    "question": "What is the largest mammal in the world?",
+    "answer": "The blue whale"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-007",
+    "question": "How many days are there in a leap year?",
+    "answer": "366"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-008",
+    "question": "Which is the smallest continent by land area?",
+    "answer": "Australia"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-009",
+    "question": "What is the name of the imaginary line at 0° latitude?",
+    "answer": "The Equator"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-010",
+    "question": "How many colours are traditionally named in a rainbow?",
+    "answer": "7"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-011",
+    "question": "Which is the largest hot desert in the world?",
+    "answer": "The Sahara"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-012",
+    "question": "What is the capital of Australia?",
+    "answer": "Canberra"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-013",
+    "question": "What is the Roman numeral for 50?",
+    "answer": "L"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-014",
+    "question": "Which bird is commonly used as a symbol of peace?",
+    "answer": "A dove"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-015",
+    "question": "What is the name of the ship on which Charles Darwin made his famous voyage?",
+    "answer": "HMS Beagle"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-016",
+    "question": "How many minutes are there in one hour?",
+    "answer": "60"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-017",
+    "question": "Which instrument is used to measure temperature?",
+    "answer": "A thermometer"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-018",
+    "question": "What is the official residence of the President of India called?",
+    "answer": "Rashtrapati Bhavan"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-019",
+    "question": "Which country is famous for the ancient city of Petra?",
+    "answer": "Jordan"
+  },
+  {
+    "round": "General Knowledge",
+    "tag": "GKN-020",
+    "question": "What is the name for a word that has the opposite meaning of another word?",
+    "answer": "An antonym"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-001",
+    "question": "In which year did India gain independence from British rule?",
+    "answer": "1947"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-002",
+    "question": "Who was the first person to walk on the Moon?",
+    "answer": "Neil Armstrong"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-003",
+    "question": "Which ancient civilisation built the pyramids at Giza?",
+    "answer": "The ancient Egyptians"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-004",
+    "question": "Who led the Salt March in India in 1930?",
+    "answer": "Mahatma Gandhi"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-005",
+    "question": "In which year did the First World War begin?",
+    "answer": "1914"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-006",
+    "question": "Which Indian emperor issued edicts after the Kalinga War and embraced Buddhism?",
+    "answer": "Ashoka (Ashoka the Great)"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-007",
+    "question": "Which wall divided Berlin from 1961 until 1989?",
+    "answer": "The Berlin Wall"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-008",
+    "question": "Who was the first Mughal emperor in India?",
+    "answer": "Babur"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-009",
+    "question": "Which civilisation built the city of Machu Picchu?",
+    "answer": "The Inca civilisation"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-010",
+    "question": "In which year was the United Nations founded?",
+    "answer": "1945"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-011",
+    "question": "Who was the first President of the United States?",
+    "answer": "George Washington"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-012",
+    "question": "Which Indian movement began in 1942 with the slogan “Do or Die”?",
+    "answer": "The Quit India Movement"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-013",
+    "question": "Which famous passenger liner sank on its maiden voyage in 1912?",
+    "answer": "The RMS Titanic"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-014",
+    "question": "Who was known as the Iron Man of India?",
+    "answer": "Sardar Vallabhbhai Patel"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-015",
+    "question": "Which French heroine helped lead her country during the Hundred Years’ War?",
+    "answer": "Joan of Arc"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-016",
+    "question": "In which year did the French Revolution begin?",
+    "answer": "1789"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-017",
+    "question": "Who founded the Maurya Empire?",
+    "answer": "Chandragupta Maurya"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-018",
+    "question": "Which document, signed in 1215, limited the power of the English king?",
+    "answer": "Magna Carta"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-019",
+    "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+    "answer": "Amelia Earhart"
+  },
+  {
+    "round": "History",
+    "tag": "HIS-020",
+    "question": "Which ancient Indian university was located in present-day Bihar?",
+    "answer": "Nalanda University"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-001",
+    "question": "Which country won the 2026 FIFA World Cup?",
+    "answer": "Spain",
+    "source": "https://www.fifa.com/en/articles/final-tournament-standings"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-002",
+    "question": "Which team did Spain defeat in the 2026 FIFA World Cup final?",
+    "answer": "Argentina",
+    "source": "https://www.fifa.com/en/articles/spain-argentina-final-report-highlights"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-003",
+    "question": "Which three countries jointly hosted the 2026 FIFA World Cup?",
+    "answer": "Canada, Mexico, and the United States",
+    "source": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-004",
+    "question": "What was the score in the 2026 FIFA World Cup final, which Spain won after extra time?",
+    "answer": "Spain 1–0 Argentina",
+    "source": "https://www.fifa.com/en/articles/spain-argentina-final-report-highlights"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-005",
+    "question": "What does the Indian space mission name SpaDeX stand for?",
+    "answer": "Space Docking Experiment",
+    "source": "https://www.isro.gov.in/mission_SpaDeX.html"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-006",
+    "question": "Which Indian mission successfully demonstrated docking in orbit in January 2025?",
+    "answer": "SpaDeX (Space Docking Experiment)",
+    "source": "https://www.isro.gov.in/spadex_docking.html"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-007",
+    "question": "Which two space agencies jointly developed the NISAR Earth-observation mission?",
+    "answer": "NASA and ISRO",
+    "source": "https://www.pib.gov.in/FactsheetDetails.aspx?ModuleId=16&NoteId=149236&id=149236&lang=2&reg=48"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-008",
+    "question": "In which year was the United Nations International Year of Quantum Science and Technology observed?",
+    "answer": "2025",
+    "source": "https://indico.un.org/event/1015312/overview"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-009",
+    "question": "What was the United Nations International Year of Cooperatives?",
+    "answer": "2025",
+    "source": "https://www.un.org/sustainabledevelopment/blog/2024/06/press-release-iyc2025/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-010",
+    "question": "Which three scientists received the 2025 Nobel Prize in Physics?",
+    "answer": "John Clarke, Michel H. Devoret, and John M. Martinis",
+    "source": "https://www.nobelprize.org/prizes/physics/2025/press-release/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-011",
+    "question": "Who received the 2025 Nobel Peace Prize?",
+    "answer": "Maria Corina Machado",
+    "source": "https://www.nobelprize.org/prizes/peace/2025/press-release/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-012",
+    "question": "Who received the 2025 Nobel Prize in Literature?",
+    "answer": "László Krasznahorkai",
+    "source": "https://www.nobelprize.org/prizes/literature/2025/summary/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-013",
+    "question": "Which three scientists received the 2025 Nobel Prize in Chemistry?",
+    "answer": "Susumu Kitagawa, Richard Robson, and Omar M. Yaghi",
+    "source": "https://www.nobelprize.org/prizes/chemistry/2025/press-release/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-014",
+    "question": "Who received the 2025 Nobel Prize in Economic Sciences for work on innovation-driven economic growth?",
+    "answer": "Joel Mokyr, Philippe Aghion, and Peter Howitt",
+    "source": "https://www.nobelprize.org/prizes/economic-sciences/2025/summary/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-015",
+    "question": "Which three researchers shared the 2025 Nobel Prize in Physiology or Medicine?",
+    "answer": "Mary E. Brunkow, Fred Ramsdell, and Shimon Sakaguchi",
+    "source": "https://www.nobelprize.org/prizes/medicine/2025/press-release/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-016",
+    "question": "Which city hosted Expo 2025?",
+    "answer": "Osaka, Japan",
+    "source": "https://www.expo2025.or.jp/en/overview/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-017",
+    "question": "Which Brazilian city hosted the 2025 United Nations Climate Change Conference, COP30?",
+    "answer": "Belém",
+    "source": "https://www.un.org/en/climatechange/cop30"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-018",
+    "question": "Which country held the G20 presidency in 2025?",
+    "answer": "South Africa",
+    "source": "https://g20.org/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-019",
+    "question": "Which country became the first African nation to hold the G20 presidency?",
+    "answer": "South Africa",
+    "source": "https://g20.org/"
+  },
+  {
+    "round": "Current Affairs",
+    "tag": "CUR-020",
+    "question": "In which country was the 2025 UN Climate Change Conference (COP30) held?",
+    "answer": "Brazil",
+    "source": "https://www.un.org/en/climatechange/cop30"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-001",
+    "question": "How many keys does a standard modern piano usually have?",
+    "answer": "88"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-002",
+    "question": "Which family of instruments does the violin belong to?",
+    "answer": "The string family"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-003",
+    "question": "What is the Italian musical term for playing loudly?",
+    "answer": "Forte"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-004",
+    "question": "How many lines are there on a standard musical staff?",
+    "answer": "5"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-005",
+    "question": "Which instrument has black and white keys and is commonly used to play chords?",
+    "answer": "The piano"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-006",
+    "question": "What is the name of the symbol at the beginning of a staff that indicates pitch?",
+    "answer": "A clef"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-007",
+    "question": "Which Indian percussion instrument is played as a pair of hand drums?",
+    "answer": "Tabla"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-008",
+    "question": "How many beats does a whole note receive in common time?",
+    "answer": "4 beats"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-009",
+    "question": "Which instrument is played by blowing across a hole and is usually made of metal?",
+    "answer": "The flute"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-010",
+    "question": "What is a group of singers performing together called?",
+    "answer": "A choir"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-011",
+    "question": "Which composer wrote the “Moonlight Sonata”?",
+    "answer": "Ludwig van Beethoven"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-012",
+    "question": "What is the highest common adult female singing voice?",
+    "answer": "Soprano"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-013",
+    "question": "Which string instrument is usually held under the chin and played with a bow?",
+    "answer": "The violin"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-014",
+    "question": "What does the musical term “piano” mean in dynamics?",
+    "answer": "Softly"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-015",
+    "question": "How many semitones are there in an octave in Western music?",
+    "answer": "12"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-016",
+    "question": "Which Indian string instrument is often associated with Ravi Shankar?",
+    "answer": "The sitar"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-017",
+    "question": "What is the person who leads an orchestra called?",
+    "answer": "The conductor"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-018",
+    "question": "Which instrument has a mouthpiece, valves, and a flared bell and belongs to the brass family?",
+    "answer": "The trumpet"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-019",
+    "question": "What is the speed of a piece of music called?",
+    "answer": "Tempo"
+  },
+  {
+    "round": "Music",
+    "tag": "MUS-020",
+    "question": "Which percussion instrument is made of a pair of small metal discs that are struck together?",
+    "answer": "Cymbals"
+  }
+]
