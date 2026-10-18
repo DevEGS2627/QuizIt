@@ -134,9 +134,6 @@
 
   async function addDraw(q, method) {
     adminRequired();
-    const { data: prior, error: priorError } = await client.from('quizit_draws').select('*').eq('round', q.round).eq('tag_key', q.tagKey).eq('active', true).maybeSingle();
-    fail(priorError);
-    if (prior) return { existing: true, draw: drawFromRow(prior) };
     const draw = {
       id: crypto.randomUUID(), round: q.round, tag: q.tag, tag_key: q.tagKey,
       question_id: q.id, difficulty: q.difficulty || 'foundation', method,
