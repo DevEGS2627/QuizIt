@@ -1,5 +1,5 @@
-/* Public browser configuration. Add this project's publishable key after connecting Supabase. */
+/* Public browser configuration. This file must contain only a publishable key. */
 window.EGS_QUIZIT_SUPABASE = {
   url: 'https://shejhfgnralscfiifflo.supabase.co',
-  publishableKey: ''
+  publishableKey: 'sb_publishable_91_OpueHs-M6ZDKX1t16-w_4xOC9jaS'
 };
