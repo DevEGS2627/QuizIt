@@ -101,6 +101,17 @@
     }
   }
 
+  async function updateQuestion(question) {
+    adminRequired();
+    const { data, error } = await client.from('quizit_questions')
+      .update(questionToRow(question)).eq('id', question.id).select('id').maybeSingle();
+    fail(error);
+    if (!data) throw new Error('The question was not updated. Check administrator access and try again.');
+    const { error: answerError } = await client.from('quizit_question_answers')
+      .upsert({ question_id: question.id, answer: question.answer || '' }, { onConflict: 'question_id' });
+    fail(answerError);
+  }
+
   async function deleteQuestion(id) {
     adminRequired();
     const { data: priorDraw, error: drawError } = await client.from('quizit_draws').select('id').eq('question_id', id).limit(1);
@@ -228,7 +239,7 @@
 
   window.QuizitCloud = {
     enabled, start, signIn, signOut, isAdmin: () => admin,
-    getQuestions, getAllQuestions, getQuestion, countQuestions, countAllQuestions, insertQuestions, deleteQuestion,
+    getQuestions, getAllQuestions, getQuestion, countQuestions, countAllQuestions, insertQuestions, updateQuestion, deleteQuestion,
     getDraws, getAllDraws, addDraw, resetDraws, readState, writeState,
     publishQuestion,
     get user() { return currentUser; }

@@ -5,7 +5,7 @@ A standalone quiz draw and scoring app for EGS. It keeps the question draw, answ
 ## Run the quiz
 
 1. Open the website and sign in with the quiz administrator account.
-2. Open **Admin controls** and select a round. Questions are selected from the entire round bank; no difficulty levels are used for now.
+2. Open **Live quiz** and select a round. Use **Admin controls** to configure teams, scoring, timers, question bank, and histories. Questions are selected from the entire round bank; no difficulty levels are used for now.
 3. Reveal a question by entering the tag on a physical chit, or use the animated wheel to draw an unused question.
 4. The revealed question shows its owner. Regular marks can only be awarded to that team. For a pounce, register the team while the timer is running, then enter the judge’s paper-check result. The question’s own team cannot pounce. Pounce is unavailable in the final round.
 5. Use Presentation mode on the operator laptop and duplicate the laptop display to the projector.
@@ -14,15 +14,15 @@ The defaults follow the supplied rules: 6 quiz rounds plus a final round, 10 sec
 
 ## Question bank
 
-Use **Admin controls** for the question bank, scoring controls, themes, round selection, and presentation launch. **Stats** shows the leaderboard, totals, team-by-round matrix, answer accuracy, and pounce trends. Add questions one at a time, import a combined CSV/JSON bank, browse by round, or download an export. Tags must be unique within a round. Each round supports up to 10,000 questions. Older imports with a `difficulty` column remain accepted, but that value is ignored.
+Use **Admin controls** for team setup, scoring controls, timers, question bank, and question/score histories. **Live quiz** contains round selection, question draws, standings, scoring paddles, and presentation launch. **Stats** shows the leaderboard, totals, team-by-round matrix, answer accuracy, and pounce trends. Add questions one at a time, import a combined CSV/JSON bank, browse by round, or download an export. Tags must be unique within a round. Each round supports up to 10,000 questions. Older imports with a `difficulty` column remain accepted, but that value is ignored.
 
 The shared project is seeded with 6,000 questions (1,000 per round). The imported Current Affairs archive is labeled with `CUR-REV-*` tags and should be reviewed before use because it is not a live current-affairs feed. See [QUESTION_BANK_SOURCES.md](QUESTION_BANK_SOURCES.md) for attribution, licensing, and review notes.
 
 ## Shared Supabase setup
 
-The app is connected to the new EGSQuizIt Supabase project (`xikglhqvmsvywmenvywl`). Its URL and **publishable** key are already in `supabase-config.js`. Never put a service-role or secret key in this public website. The database tables, row-level security, Realtime publication, default scoring state, and 6,000 starter questions have been applied to that project.
+The app is pointed at the new Supabase project (`shejhfgnralscfiifflo`). Its publishable key is not configured yet, so the app remains in local preview mode until a publishable key is added to `supabase-config.js`. Never put a service-role or secret key in this public website.
 
-The base migration is `supabase/migrations/20261018010000_question_draw_shared_arena.sql`; `supabase/migrations/20261018103000_seed_minimum_question_bank.sql` fills each round to 1,000 questions. These create separate `quizit_*` tables, leave the old `quiz_state` table alone, enable row-level security, and seed the question bank and default scoring state. Question text, draw history, teams, scoring rules, and scores sync through Supabase Realtime. Answer keys are stored in a separate admin-only table.
+For a new project, apply the SQL files in `supabase/migrations/` in timestamp order. The first migration creates the `quizit_*` tables and row-level security policies; the six following seed migrations add 1,000 questions to each round and default scoring state. Question text, draw history, teams, scoring rules, and scores sync through Supabase Realtime. Answer keys are stored in a separate admin-only table.
 
 Create the first administrator user in Supabase Dashboard → Authentication → Users → Add user. Use the email and password the quiz operator will sign in with. Then open SQL Editor and grant that user the `admin` app-metadata role. Replace the example email below with the administrator’s sign-in email and run this once:
 
@@ -38,7 +38,7 @@ The app uses shared Supabase data when opened from a hosted site or `localhost`.
 
 ## Deploy
 
-The live site is [egsquizit.github.io/EGSQuizIt](https://egsquizit.github.io/EGSQuizIt/). The app is published from the root of the `EGSQuizIt` GitHub repository. Because this is a static site, it does not need a server of its own; Supabase supplies authentication, shared data, and Realtime updates.
+The repository is [DevEGS2627/QuizIt](https://github.com/DevEGS2627/QuizIt). To publish with GitHub Pages, enable Pages for the `main` branch and the repository root in Settings → Pages. The expected Pages address is [devegs2627.github.io/QuizIt](https://devegs2627.github.io/QuizIt/). Because this is a static site, it does not need a server of its own; Supabase supplies authentication, shared data, and Realtime updates once configured.
 
 ## Question import format
 
