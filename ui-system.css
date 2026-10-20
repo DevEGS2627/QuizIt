@@ -197,7 +197,7 @@ body[data-app-view="home"]:not(.presentation) .arena-team-scores>div:first-child
 body[data-app-view="home"]:not(.presentation) .arena-team-scores .total{display:grid;align-content:center;gap:1px;padding:7px 9px}
 body[data-app-view="home"]:not(.presentation) .arena-team-scores .total small{font-size:8px;letter-spacing:.04em}
 body[data-app-view="home"]:not(.presentation) .arena-team-scores .total b{font-size:clamp(23px,2.8vw,32px)}
-body[data-app-view="home"]:not(.presentation) .team-drop-hint,body[data-app-view="home"]:not(.presentation) .question-owner-badge,body[data-app-view="home"]:not(.presentation) .pounce-live-tag{display:none!important}
+body[data-app-view="home"]:not(.presentation) .team-drop-hint{display:none!important}
 body[data-app-view="home"]:not(.presentation) .arena-team.question-owner{border-color:var(--line);box-shadow:var(--shadowSm)}
 body[data-app-view="stats"] #adminToolbar,body[data-app-view="stats"] .round-area,body[data-app-view="stats"] #roundPicker,body[data-app-view="stats"] #integratedScoreboard,body[data-app-view="stats"] .work-grid,body[data-app-view="stats"] .history-panel,body[data-app-view="stats"] .statusline,body[data-app-view="stats"] #scoreDock,body[data-app-view="stats"] #adminGate{display:none!important}
 body[data-app-view="stats"] #statsView[hidden]{display:grid!important}
