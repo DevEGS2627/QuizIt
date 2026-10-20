@@ -14,43 +14,43 @@ body[data-theme="egs"] {
   --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
   --font-mono: ui-monospace, "SF Mono", "SFProMono-Regular", Menlo, Consolas, monospace;
 
-  /* Warm Alabaster Creme Palette */
-  --canvas: #f8f6f0;                    /* Warm Alabaster Linen Canvas */
-  --surface: #ffffff;                   /* Pure Crisp Porcelain White */
-  --surface-raised: #f3efe6;            /* Soft Warm Oat Creme */
-  --surface-soft: #eae3d5;              /* Warm Sand Well */
-  --surface-glass: rgba(248, 246, 240, 0.92);
-  --line: #e4ded3;                      /* Delicate Cashmere Border */
-  --line-subtle: #ece7de;               /* Faint Hairline */
-  --line-strong: #d4ccbf;               /* Defined Edge */
+  /* Apple / Airbnb Pure Architectural Gallery Light (Projector Calibrated) */
+  --canvas: #f8fafc;                    /* Pure Crisp Gallery Slate-50 */
+  --surface: #ffffff;                   /* Pure Optical White */
+  --surface-raised: #f1f5f9;            /* Refined Cool Slate Well */
+  --surface-soft: #e2e8f0;              /* Architectural Structure */
+  --surface-glass: rgba(255, 255, 255, 0.94);
+  --line: #e2e8f0;                      /* Razor-Sharp Slate Border */
+  --line-subtle: #f1f5f9;               /* Subtle Structure */
+  --line-strong: #cbd5e1;               /* High-Contrast Edge */
 
-  /* Typographic Ink Colors */
-  --ink: #18181b;                       /* Deep Warm Espresso Charcoal */
-  --ink-secondary: #57534e;             /* Warm Stone */
-  --ink-muted: #78716c;                 /* Warm Taupe Slate */
-  --ink-subtle: #a8a29e;                /* Soft Taupe */
+  /* Typographic Ink Colors (Maximum Optical Legibility) */
+  --ink: #0f172a;                       /* Slate 900 Deep Jet Ink */
+  --ink-secondary: #334155;             /* Slate 700 Clear Readable Body */
+  --ink-muted: #64748b;                 /* Slate 500 Metadata */
+  --ink-subtle: #94a3b8;                /* Slate 400 Subtle Details */
 
   /* Accents */
-  --brand: #18181b;
-  --brand2: #1e3a8a;
-  --brand2-hover: #172554;
-  --brandSoft: #f3efe6;
+  --brand: #0f172a;
+  --brand2: #2563eb;                    /* Apple Royal Cobalt */
+  --brand2-hover: #1d4ed8;
+  --brandSoft: #eff6ff;
 
-  --accent: #d97706;                    /* Warm Amber Gold */
+  --accent: #d97706;                    /* High-Contrast Amber Gold */
   --accent-light: #f59e0b;
-  --accentInk: #92400e;
+  --accentInk: #78350f;
   --accentSoft: #fef3c7;
-  --accentGlow: rgba(217, 119, 6, 0.24);
+  --accentGlow: rgba(217, 119, 6, 0.2);
 
-  --positive: #15803d;
-  --positiveSoft: #f0fdf4;
-  --negative: #be123c;
-  --negativeSoft: #fff1f2;
+  --positive: #059669;                  /* Vivid Emerald */
+  --positiveSoft: #ecfdf5;
+  --negative: #dc2626;                  /* High-Contrast Red */
+  --negativeSoft: #fef2f2;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(24, 24, 27, 0.04), 0 1px 2px rgba(24, 24, 27, 0.02);
-  --shadow-md: 0 4px 16px -2px rgba(24, 24, 27, 0.05), 0 2px 4px rgba(24, 24, 27, 0.02);
-  --shadow-lg: 0 16px 36px -6px rgba(24, 24, 27, 0.07), 0 4px 12px rgba(24, 24, 27, 0.03);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
 /* Stage Prime (Ultra Projector Calibrated Mode) */
@@ -667,12 +667,14 @@ body[data-app-view="home"]:not(.presentation) .arena-score-head h2 {
 
 body[data-app-view="home"]:not(.presentation) #integratedScoreboard .score-kicker,
 body[data-app-view="home"]:not(.presentation) .score-kicker {
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 900 !important;
   letter-spacing: 0.16em !important;
   color: var(--accent) !important;
   text-transform: uppercase !important;
   margin-bottom: 6px !important;
+  padding-top: 4px !important;
+  line-height: 1.3 !important;
   display: block !important;
 }
 
@@ -687,11 +689,16 @@ body[data-app-view="home"]:not(.presentation) .score-kicker::before {
 /* Grand Grid for Home Scoreboard (Significantly Bigger Cards) */
 body[data-app-view="home"]:not(.presentation) .arena-teams {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  grid-template-rows: auto auto !important;
-  gap: 22px !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px 24px !important;
   height: auto !important;
   min-height: 0 !important;
+}
+
+@media (max-width: 860px) {
+  body[data-app-view="home"]:not(.presentation) .arena-teams {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 1040px) {
@@ -726,17 +733,30 @@ body[data-app-view="home"]:not(.presentation) .arena-team {
   align-items: center !important;
   justify-content: space-between !important;
   gap: 16px !important;
-  min-height: 114px !important;
+  min-height: 104px !important;
   height: auto !important;
-  padding: 18px 24px !important;
+  padding: 16px 22px !important;
   background: var(--surface) !important;
   border: 1.5px solid var(--line) !important;
-  border-radius: 20px !important;
+  border-radius: 18px !important;
   box-shadow: var(--shadow-sm) !important;
   position: relative !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team.question-owner {
+  border: 2.5px solid var(--accent) !important;
+  background: var(--surface) !important;
+  box-shadow: 0 8px 30px var(--accentGlow) !important;
+}
+
+body[data-app-view="home"][data-theme="midnight"]:not(.presentation) .arena-team.question-owner,
+body[data-app-view="home"][data-theme="projector"]:not(.presentation) .arena-team.question-owner {
+  border: 2.5px solid #f59e0b !important;
+  background: rgba(245, 158, 11, 0.06) !important;
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.24) !important;
 }
 
 body[data-app-view="home"]:not(.presentation) .arena-team:hover {
@@ -820,21 +840,43 @@ body[data-app-view="home"]:not(.presentation) .arena-team-info {
 
 body[data-app-view="home"]:not(.presentation) .arena-team-name {
   font-family: var(--font-display) !important;
-  font-size: 21px !important;
+  font-size: clamp(18px, 1.35vw, 22px) !important;
   font-weight: 850 !important;
   color: var(--ink) !important;
   letter-spacing: -0.015em !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
 }
 
 body[data-app-view="home"]:not(.presentation) .arena-team-sub {
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  min-height: 18px !important;
+  min-height: 20px !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .question-owner-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #0f172a !important;
+  color: #fbbf24 !important;
+  border: 1.5px solid #f59e0b !important;
+  padding: 3px 9px !important;
+  border-radius: 99px !important;
+  font-size: 10.5px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14) !important;
+}
+
+body[data-app-view="home"][data-theme="midnight"]:not(.presentation) .question-owner-badge,
+body[data-app-view="home"][data-theme="projector"]:not(.presentation) .question-owner-badge {
+  background: rgba(245, 158, 11, 0.22) !important;
+  color: #fbbf24 !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35) !important;
 }
 
 body[data-app-view="home"]:not(.presentation) .arena-team-round-stat {
@@ -890,30 +932,54 @@ body[data-app-view="home"]:not(.presentation) .score-hero-total {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  padding: 8px 18px !important;
+  padding: 7px 16px !important;
   border-radius: 12px !important;
-  background: var(--accentSoft) !important;
-  border: 1.5px solid var(--accent) !important;
-  min-width: 88px !important;
+  background: #0f172a !important;
+  border: 1.5px solid #0f172a !important;
+  min-width: 82px !important;
   text-align: right !important;
   box-sizing: border-box !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team.question-owner .score-hero-total {
+  border-color: #f59e0b !important;
+  background: #0f172a !important;
+}
+
+body[data-app-view="home"][data-theme="midnight"]:not(.presentation) .score-hero-total,
+body[data-app-view="home"][data-theme="projector"]:not(.presentation) .score-hero-total {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: none !important;
+}
+
+body[data-app-view="home"][data-theme="midnight"]:not(.presentation) .arena-team.question-owner .score-hero-total,
+body[data-app-view="home"][data-theme="projector"]:not(.presentation) .arena-team.question-owner .score-hero-total {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: #f59e0b !important;
 }
 
 body[data-app-view="home"]:not(.presentation) .score-hero-total small {
-  font-size: 9px !important;
+  font-size: 8.5px !important;
   font-weight: 900 !important;
-  color: var(--accent) !important;
-  letter-spacing: 0.08em !important;
+  color: #94a3b8 !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
   margin-bottom: 2px !important;
+  line-height: 1 !important;
 }
 
 body[data-app-view="home"]:not(.presentation) .score-hero-total b {
-  color: var(--accent) !important;
-  font-size: 30px !important;
+  color: #ffffff !important;
+  font-size: 28px !important;
   font-weight: 900 !important;
   font-variant-numeric: tabular-nums !important;
   line-height: 1 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team.question-owner .score-hero-total b {
+  color: #fbbf24 !important;
 }
 
 /* Home Footer */
@@ -2075,10 +2141,24 @@ body.presentation[data-theme="egs"] #questionPanel .timer-caption {
 
 body.presentation #questionPanel .timer-number {
   font-family: var(--font-mono) !important;
-  font-size: 22px !important;
+  font-size: 24px !important;
   font-weight: 900 !important;
-  color: #f59e0b !important;
-  min-width: 64px !important;
+  color: #ffffff !important;
+  min-width: 68px !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+body.presentation[data-theme="egs"] #questionPanel .timer-number {
+  color: #0f172a !important;
+}
+
+body.presentation #questionPanel .timer-number.urgent {
+  color: #fbbf24 !important;
+  animation: timer-pulse 0.65s ease-in-out infinite alternate !important;
+}
+
+body.presentation[data-theme="egs"] #questionPanel .timer-number.urgent {
+  color: #dc2626 !important;
 }
 
 body.presentation #questionPanel .timer-track {
@@ -2093,11 +2173,29 @@ body.presentation[data-theme="egs"] #questionPanel .timer-track {
   background: #e2e8f0 !important;
 }
 
+body.presentation #questionPanel .timer-track {
+  flex: 1 1 auto !important;
+  height: 10px !important;
+  border-radius: 99px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  overflow: hidden !important;
+}
+
+body.presentation[data-theme="egs"] #questionPanel .timer-track {
+  background: #e2e8f0 !important;
+}
+
 body.presentation #questionPanel .timer-fill {
   height: 100% !important;
   border-radius: 99px !important;
-  background: linear-gradient(90deg, #10b981, #f59e0b) !important;
-  transition: width 0.3s linear !important;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%) !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4) !important;
+  transition: width 0.3s linear, background 0.3s ease !important;
+}
+
+body.presentation #questionPanel .timer-fill.urgent {
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 100%) !important;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.6) !important;
 }
 
 /* ==========================================================================
@@ -2768,21 +2866,39 @@ body.presentation[data-theme="egs"] #presentationBar .present-theme-picker {
 }
 
 /* ==========================================================================
-   SCORE DOCK IN PRESENTATION MODE
+   SCORE DOCK & PADDLES: ZERO STAGE DISRUPTION
+   100% Hidden in normal presentation. When toggled, renders as a clean elevated bar.
    ========================================================================== */
-body.presentation:not(.presentation-score-controls) #scoreDock {
+body.presentation:not(.presentation-score-controls) #scoreDock,
+body[data-app-view="home"]:not(.presentation) #scoreDock,
+body[data-app-view="stats"]:not(.presentation) #scoreDock {
   display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
 }
 
 body.presentation.presentation-score-controls #scoreDock {
+  display: block !important;
   position: fixed !important;
-  bottom: 12px !important;
+  bottom: 78px !important;
   left: 50% !important;
+  right: auto !important;
   transform: translateX(-50%) !important;
-  width: min(1180px, calc(100vw - 32px)) !important;
+  width: min(1080px, calc(100vw - 32px)) !important;
+  height: auto !important;
+  max-height: 94px !important;
   z-index: 9998 !important;
-  background: #10141f !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  background: rgba(10, 15, 26, 0.96) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
   border-radius: 16px !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important;
   padding: 10px 14px !important;
@@ -2792,11 +2908,138 @@ body.presentation.presentation-score-controls #scoreDock {
 body.presentation[data-theme="egs"].presentation-score-controls #scoreDock {
   background: #ffffff !important;
   border: 1.5px solid #cbd5e1 !important;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.16) !important;
 }
 
 body.presentation #scoreDock .dock-head {
   display: none !important;
+}
+
+body.presentation.presentation-score-controls #presentationBar {
+  bottom: 18px !important;
+}
+
+body.presentation .score-paddles {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 10px !important;
+  height: 68px !important;
+  max-height: 68px !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.presentation .score-paddle {
+  min-height: 68px !important;
+  height: 68px !important;
+  max-height: 68px !important;
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+body.presentation .score-paddle[data-mark="correct"] {
+  background: #059669 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+body.presentation .score-paddle[data-mark="correct"]:hover:not(:disabled) {
+  background: #047857 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.5) !important;
+}
+
+body.presentation .score-paddle[data-mark="wrong"] {
+  background: #475569 !important;
+  border-color: #64748b !important;
+  color: #ffffff !important;
+}
+body.presentation .score-paddle[data-mark="wrong"]:hover:not(:disabled) {
+  background: #334155 !important;
+}
+
+body.presentation .score-paddle[data-mark="pounceRegister"] {
+  background: #0284c7 !important;
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+}
+body.presentation .score-paddle[data-mark="pounceRegister"]:hover:not(:disabled) {
+  background: #0369a1 !important;
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.5) !important;
+}
+
+body.presentation .score-paddle[data-mark="pounceCorrect"] {
+  background: #7c3aed !important;
+  border-color: #a855f7 !important;
+  color: #ffffff !important;
+}
+body.presentation .score-paddle[data-mark="pounceCorrect"]:hover:not(:disabled) {
+  background: #6d28d9 !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.5) !important;
+}
+
+body.presentation .score-paddle[data-mark="pounceWrong"] {
+  background: #dc2626 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+body.presentation .score-paddle[data-mark="pounceWrong"]:hover:not(:disabled) {
+  background: #b91c1c !important;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.5) !important;
+}
+
+body.presentation .score-paddle .paddle-top {
+  font-size: 8px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.08em !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  white-space: nowrap !important;
+}
+
+body.presentation .score-paddle strong,
+body.presentation .score-paddle .paddle-name {
+  font-size: 11.5px !important;
+  font-weight: 850 !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.2 !important;
+}
+
+body.presentation .score-paddle .paddle-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 4px !important;
+}
+
+body.presentation .score-paddle .paddle-meta > span {
+  font-size: 9px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body.presentation .score-paddle .paddle-value {
+  font-size: 17px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  font-variant-numeric: tabular-nums !important;
+  margin-left: auto !important;
 }
 
 /* ==========================================================================
@@ -2899,191 +3142,6 @@ body[data-app-view="home"]:not(.presentation) #integratedScoreboard .arena-team:
   display: block;
   font-size: 12px;
   color: var(--ink-muted);
-}
-
-/* --------------------------------------------------------------------------
-   13. SCORE DOCK PADDLES (MINIMAL, UNIFIED TACTILE PADDLES)
-   -------------------------------------------------------------------------- */
-body.presentation:not(.presentation-score-controls) #scoreDock {
-  display: none !important;
-}
-
-body.presentation.presentation-score-controls #scoreDock {
-  display: block !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 82px !important;
-  max-height: 82px !important;
-  z-index: 9998 !important;
-  background: rgba(10, 14, 24, 0.96) !important;
-  backdrop-filter: blur(28px) !important;
-  -webkit-backdrop-filter: blur(28px) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  padding: 8px 24px 8px !important;
-  box-sizing: border-box !important;
-}
-
-body.presentation #scoreDock .dock-head {
-  display: none !important;
-}
-
-body.presentation .score-paddles {
-  display: grid !important;
-  grid-template-columns: repeat(5, 1fr) !important;
-  gap: 10px !important;
-  height: 66px !important;
-  max-height: 66px !important;
-  max-width: 1100px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-
-body.presentation .score-paddle {
-  min-height: 66px !important;
-  height: 66px !important;
-  max-height: 66px !important;
-  border-radius: 12px !important;
-  padding: 6px 12px !important;
-  color: #f1f5f9 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  cursor: pointer !important;
-  box-sizing: border-box !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  overflow: hidden !important;
-}
-
-body.presentation .score-paddle:hover:not(:disabled) {
-  transform: translateY(-2px) !important;
-}
-
-body.presentation .score-paddle:active:not(:disabled) {
-  transform: translateY(1px) scale(0.98) !important;
-}
-
-body.presentation .score-paddle[data-mark="correct"] {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(5, 150, 105, 0.28)) !important;
-  border-color: rgba(16, 185, 129, 0.45) !important;
-}
-
-body.presentation .score-paddle[data-mark="correct"]:hover:not(:disabled) {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(5, 150, 105, 0.42)) !important;
-  border-color: #34d399 !important;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.3) !important;
-}
-
-body.presentation .score-paddle[data-mark="wrong"] {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-}
-
-body.presentation .score-paddle[data-mark="wrong"]:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.09) !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceRegister"] {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(2, 132, 199, 0.28)) !important;
-  border-color: rgba(14, 165, 233, 0.45) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceRegister"]:hover:not(:disabled) {
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.28), rgba(2, 132, 199, 0.42)) !important;
-  border-color: #38bdf8 !important;
-  box-shadow: 0 0 16px rgba(14, 165, 233, 0.3) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceCorrect"] {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(147, 51, 234, 0.28)) !important;
-  border-color: rgba(168, 85, 247, 0.45) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceCorrect"]:hover:not(:disabled) {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.28), rgba(147, 51, 234, 0.42)) !important;
-  border-color: #c084fc !important;
-  box-shadow: 0 0 16px rgba(168, 85, 247, 0.3) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceWrong"] {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(220, 38, 38, 0.28)) !important;
-  border-color: rgba(239, 68, 68, 0.45) !important;
-}
-
-body.presentation .score-paddle[data-mark="pounceWrong"]:hover:not(:disabled) {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.28), rgba(220, 38, 38, 0.42)) !important;
-  border-color: #f87171 !important;
-  box-shadow: 0 0 16px rgba(239, 68, 68, 0.3) !important;
-}
-
-body.presentation .score-paddle .paddle-top {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  font-size: 8px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-  flex: 0 0 auto !important;
-}
-
-body.presentation .score-paddle .paddle-top > span:last-child {
-  display: none !important;
-}
-
-body.presentation .score-paddle strong,
-body.presentation .score-paddle .paddle-name {
-  display: block !important;
-  font-family: var(--font-display) !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1.25 !important;
-  flex: 0 0 auto !important;
-}
-
-body.presentation .score-paddle .paddle-meta {
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: space-between !important;
-  margin: 0 !important;
-  margin-top: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-  flex: 0 0 auto !important;
-}
-
-body.presentation .score-paddle .paddle-meta > span {
-  display: block !important;
-  font-size: 8.5px !important;
-  color: rgba(255, 255, 255, 0.55) !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  max-width: 110px !important;
-  margin: 0 !important;
-  line-height: 1 !important;
-}
-
-body.presentation .score-paddle .paddle-value {
-  font-size: 16px !important;
-  font-weight: 900 !important;
-  font-variant-numeric: tabular-nums !important;
-  line-height: 1 !important;
-  margin: 0 !important;
-  margin-left: auto !important;
 }
 
 /* Home / Normal View Score Paddles - Generous sizing with zero text overflow */
