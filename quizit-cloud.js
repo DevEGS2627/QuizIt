@@ -172,19 +172,29 @@
     return data;
   }
 
+  let currentActiveQuestion = undefined;
+
   async function writeState(state) {
     adminRequired();
+    if (Object.prototype.hasOwnProperty.call(state, 'activeQuestion')) {
+      currentActiveQuestion = state.activeQuestion || null;
+    }
     const prior = await readState();
     const next = { ...(prior?.state || {}), ...state };
-    if (!Object.prototype.hasOwnProperty.call(state, 'activeQuestion')) next.activeQuestion = prior?.state?.activeQuestion ?? null;
+    if (currentActiveQuestion !== undefined) {
+      next.activeQuestion = currentActiveQuestion;
+    } else {
+      next.activeQuestion = prior?.state?.activeQuestion ?? null;
+    }
     const { error } = await client.from('quizit_live_state').upsert({ id: 'main', state: next, updated_at: new Date().toISOString() });
     fail(error);
   }
 
   async function publishQuestion(question) {
     adminRequired();
+    currentActiveQuestion = question || null;
     const prior = await readState();
-    const state = { ...(prior?.state || {}), activeQuestion: question || null };
+    const state = { ...(prior?.state || {}), activeQuestion: currentActiveQuestion };
     const { error } = await client.from('quizit_live_state').upsert({ id: 'main', state, updated_at: new Date().toISOString() });
     fail(error);
   }
@@ -198,12 +208,25 @@
       setAuth(session?.user || null, onAuth);
     });
     const state = await readState();
-    if (state.state?.activeQuestion) onQuestion?.(state.state.activeQuestion);
+    if (state.state?.activeQuestion) {
+      currentActiveQuestion = state.state.activeQuestion;
+      onQuestion?.(state.state.activeQuestion);
+    }
     channel = client.channel('quizit-shared-arena')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'quizit_live_state' }, (payload) => {
         if (payload.new?.state) {
           onState?.(payload.new.state);
-          onQuestion?.(payload.new.state.activeQuestion || null);
+          if (payload.new.state.activeQuestion !== undefined) {
+            const incoming = payload.new.state.activeQuestion || null;
+            const incomingTime = Number(incoming?.publishedAt) || 0;
+            const currentTime = Number(currentActiveQuestion?.publishedAt) || 0;
+            if (!currentActiveQuestion || !currentTime || incomingTime >= currentTime) {
+              currentActiveQuestion = incoming;
+              onQuestion?.(incoming);
+            } else {
+              console.warn('[QuizitCloud] Dropped stale activeQuestion from postgres_changes:', incoming?.tag, incomingTime, 'vs current:', currentActiveQuestion?.tag, currentTime);
+            }
+          }
         }
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'quizit_questions' }, () => onData?.('questions'))
