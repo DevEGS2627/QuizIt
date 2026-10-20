@@ -369,7 +369,19 @@ body[data-app-view="admin"]:not(.presentation) #homeLiveQuestion {
 }
 
 body[data-app-view="admin"]:not(.presentation) #adminToolbar {
+  display: none !important;
+}
+
+body[data-app-view="admin"]:not(.presentation) #page {
   display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  max-width: 1540px !important;
+  width: min(1540px, 96vw) !important;
+  margin: 0 auto !important;
+  padding: 24px clamp(18px, 2.5vw, 40px) 64px !important;
+  min-height: auto !important;
+  height: auto !important;
 }
 
 body[data-app-view="admin"]:not(.presentation) #adminControlsView[hidden] {
@@ -746,16 +758,32 @@ body[data-app-view="home"]:not(.presentation) .arena-team-scores .total b {
 }
 
 /* --------------------------------------------------------------------------
-   6. ADMIN WORKSPACE (SLEEK HORIZONTAL ACTION ROWS - NO GIANT EMPTY DESERTS)
+   6. ADMIN WORKSPACE (SLEEK WIDESCREEN COMMAND CENTER - ZERO WASTED DESERTS)
    -------------------------------------------------------------------------- */
 body[data-app-view="admin"]:not(.presentation) .admin-controls-view {
-  max-width: 1000px !important;
-  margin: 0 auto !important;
-  padding: 0 16px 48px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 48px !important;
 }
 
 .admin-controls-heading {
   margin-bottom: 24px !important;
+}
+
+.admin-head-top {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-bottom: 4px !important;
+  flex-wrap: wrap !important;
+}
+
+.admin-quick-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
 }
 
 .admin-controls-heading h1 {
@@ -770,6 +798,60 @@ body[data-app-view="admin"]:not(.presentation) .admin-controls-view {
   color: var(--ink-secondary) !important;
   font-size: 14px !important;
   margin: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   ADMIN OPERATIONAL STATUS STRIP (LIVE KPI METRICS)
+   -------------------------------------------------------------------------- */
+.admin-kpi-bar {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 20px !important;
+}
+
+@media (max-width: 900px) {
+  .admin-kpi-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.admin-kpi-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  padding: 14px 18px !important;
+  box-shadow: var(--shadow-sm) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.admin-kpi-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--line-strong) !important;
+}
+
+.admin-kpi-label {
+  font-size: 10.5px !important;
+  font-weight: 750 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--ink-secondary) !important;
+}
+
+.admin-kpi-val {
+  font-size: 20px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ink) !important;
+}
+
+.admin-kpi-sub {
+  font-size: 11px !important;
+  color: var(--ink-muted) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -931,6 +1013,383 @@ body[data-app-view="admin"]:not(.presentation) .admin-controls-view {
   flex: 1 1 50% !important;
   padding: 9px 8px !important;
   font-size: 12px !important;
+}
+
+/* --------------------------------------------------------------------------
+   6B. ADMIN WORKSPACE 2-COLUMN HUB (AUDIT LEDGER & LIVE STANDINGS SNAPSHOT)
+   -------------------------------------------------------------------------- */
+.admin-workspace-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 1.2fr) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  margin-top: 10px !important;
+}
+
+@media (max-width: 1080px) {
+  .admin-workspace-split {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.admin-split-main {
+  min-width: 0 !important;
+}
+
+.admin-split-side {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  min-width: 0 !important;
+}
+
+.admin-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 22px 14px !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.admin-card-header h3 {
+  font-size: 16px !important;
+  font-weight: 750 !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.015em !important;
+}
+
+.admin-live-tag {
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 3px 9px !important;
+  border-radius: 99px !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.admin-rules-edit-btn {
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  padding: 5px 12px !important;
+  border-radius: 9px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--surface-raised) !important;
+  color: var(--ink) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.admin-rules-edit-btn:hover {
+  background: var(--accentSoft) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  transform: translateY(-1px) !important;
+}
+
+.admin-live-standings {
+  padding: 14px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.admin-standing-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 9px 14px !important;
+  border-radius: 12px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.admin-standing-row:hover {
+  transform: translateX(2px) !important;
+  border-color: var(--line-strong) !important;
+}
+
+.admin-standing-row.leader-row {
+  background: var(--accentSoft) !important;
+  border-color: var(--accent) !important;
+}
+
+.admin-standing-rank {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  color: var(--ink-secondary) !important;
+  flex: 0 0 24px !important;
+}
+
+.admin-standing-name {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.admin-standing-pts {
+  font-family: var(--font-mono) !important;
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  color: var(--accent) !important;
+  flex: 0 0 auto !important;
+}
+
+.admin-rules-list {
+  padding: 14px 18px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px !important;
+}
+
+.admin-rule-item {
+  padding: 11px 14px !important;
+  border-radius: 12px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.admin-rule-item span {
+  font-size: 10px !important;
+  font-weight: 750 !important;
+  color: var(--ink-secondary) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.admin-rule-item b {
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.rule-pts-pos { color: #10b981 !important; }
+.rule-pts-zero { color: var(--ink-secondary) !important; }
+.rule-pts-neg { color: #ef4444 !important; }
+.rule-timer-val { color: var(--accent) !important; }
+
+/* --------------------------------------------------------------------------
+   MARKS HISTORY PANEL & AUDIT TRAIL REFINEMENTS
+   -------------------------------------------------------------------------- */
+.marks-history-panel {
+  padding: 22px 24px !important;
+  border-radius: 18px !important;
+}
+
+.history-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-bottom: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.history-head h2 {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--ink) !important;
+  margin: 0 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.history-head span {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: var(--ink-secondary) !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  padding: 2px 8px !important;
+  border-radius: 99px !important;
+  margin-left: 8px !important;
+}
+
+.history-tools {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.history-tools input[type="search"] {
+  height: 38px !important;
+  border-radius: 10px !important;
+  padding: 0 14px !important;
+  font-size: 12.5px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--surface-raised) !important;
+  color: var(--ink) !important;
+  min-width: 220px !important;
+}
+
+.danger-button {
+  height: 38px !important;
+  padding: 0 14px !important;
+  font-size: 12px !important;
+  font-weight: 750 !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #ef4444 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.danger-button:hover {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  transform: translateY(-1px) !important;
+}
+
+.history-filter-pills {
+  display: flex !important;
+  gap: 8px !important;
+  margin-bottom: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.hist-pill {
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  padding: 5px 13px !important;
+  border-radius: 99px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--surface-raised) !important;
+  color: var(--ink-secondary) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hist-pill:hover {
+  border-color: var(--line-strong) !important;
+  color: var(--ink) !important;
+  transform: translateY(-1px) !important;
+}
+
+.hist-pill.active {
+  background: var(--accent) !important;
+  color: var(--accentInk, #18181b) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.history-caption {
+  color: var(--ink-secondary) !important;
+  font-size: 12.5px !important;
+  margin: 0 0 14px !important;
+}
+
+.score-history {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  max-height: 480px !important;
+  overflow-y: auto !important;
+  padding-right: 4px !important;
+}
+
+.score-history-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 11px 16px !important;
+  border-radius: 12px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.score-history-row:hover {
+  border-color: var(--line-strong) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.score-history-main {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.score-history-main strong {
+  font-size: 13.5px !important;
+  font-weight: 750 !important;
+  color: var(--ink) !important;
+}
+
+.score-history-main span {
+  font-size: 11.5px !important;
+  color: var(--ink-secondary) !important;
+}
+
+.score-history-row time {
+  font-size: 11px !important;
+  color: var(--ink-muted) !important;
+  flex: 0 0 auto !important;
+}
+
+.score-history-row .pts {
+  font-family: var(--font-mono) !important;
+  font-size: 13.5px !important;
+  font-weight: 850 !important;
+  padding: 4px 10px !important;
+  border-radius: 8px !important;
+  flex: 0 0 auto !important;
+  min-width: 48px !important;
+  text-align: center !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.score-history-row .pts.plus {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #10b981 !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+.score-history-row .pts.minus {
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+
+.score-history-row button {
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  padding: 6px 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--surface) !important;
+  color: var(--ink-secondary) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.score-history-row button:hover {
+  color: var(--ink) !important;
+  border-color: var(--line-strong) !important;
+  transform: translateY(-1px) !important;
+}
+
+.score-history-row button[data-undo-score]:hover {
+  background: rgba(239, 68, 68, 0.12) !important;
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1208,10 +1667,10 @@ body.presentation .score-paddle:after {
   height: 0 !important;
 }
 
-/* Presentation Grid: Expanded Question Stage (Scoreboard rail is compact 260px; Question Stage gets ~82% width) */
+/* Presentation Grid: Expanded Question Stage (Scoreboard rail expanded to 330px so team names never truncate) */
 body.presentation #page {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) 260px !important;
+  grid-template-columns: minmax(0, 1fr) 330px !important;
   grid-template-rows: 1fr !important;
   gap: 16px !important;
   width: 100vw !important;
@@ -1222,12 +1681,12 @@ body.presentation #page {
   box-sizing: border-box !important;
   background: transparent !important;
   margin: 0 !important;
-  padding: 18px 22px 80px !important;
+  padding: 18px 22px 86px !important;
   transition: padding 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.presentation.presentation-score-controls #page {
-  padding-bottom: 168px !important;
+  padding-bottom: 186px !important;
 }
 
 @media (max-width: 960px) {
@@ -1440,23 +1899,23 @@ body.presentation #integratedScoreboard .arena-teams {
   overflow: hidden !important;
 }
 
-/* All Teams Share the SAME Unified Minimal Glass Finish */
+/* All Teams Share the SAME Unified Minimal Glass Finish - 2 Column Layout within Card */
 body.presentation #integratedScoreboard .arena-team {
-  padding: 8px 12px !important;
-  border-radius: 10px !important;
-  background: rgba(255, 255, 255, 0.035) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  display: flex !important;
-  flex-direction: row !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  gap: 6px 12px !important;
   color: #ffffff !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.presentation #integratedScoreboard .arena-team:hover {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.065) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
 
 /* Eliminate All Rainbow Stripes */
@@ -1466,64 +1925,67 @@ body.presentation #integratedScoreboard .arena-team:nth-child(n) {
 
 body.presentation #integratedScoreboard .arena-team-head {
   display: flex !important;
+  flex-wrap: wrap !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 6px 8px !important;
   margin: 0 !important;
   min-width: 0 !important;
-  flex: 1 !important;
+  flex: 1 1 auto !important;
 }
 
 /* Unified Subtle Initial Avatar */
 body.presentation #integratedScoreboard .arena-team-logo,
 body.presentation #integratedScoreboard .arena-team-initial {
-  width: 26px !important;
-  height: 26px !important;
-  border-radius: 7px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 8px !important;
   background: rgba(255, 255, 255, 0.08) !important;
   color: #e2e8f0 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  font-weight: 750 !important;
   flex: none !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-name {
-  color: #f1f5f9 !important;
-  font-size: 13px !important;
-  font-weight: 650 !important;
+  color: #ffffff !important;
+  font-size: 13.5px !important;
+  font-weight: 750 !important;
   letter-spacing: -0.01em !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  max-width: 170px !important;
 }
 
-/* Clean Minimal Rank (Strictly overrides any [data-rank] styling) */
+/* Clean Minimal Rank */
 body.presentation #integratedScoreboard .arena-team[data-rank] .arena-team-rank,
 body.presentation #integratedScoreboard .arena-team-rank {
   font-family: var(--font-mono) !important;
   font-size: 10px !important;
-  font-weight: 600 !important;
-  color: #64748b !important;
-  background: transparent !important;
+  font-weight: 700 !important;
+  color: #94a3b8 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
   flex: none !important;
 }
 
 /* ONLY ONE Team Highlight: Active Question Turn */
 body.presentation #integratedScoreboard .arena-team.question-owner {
-  border: 1px solid rgba(245, 158, 11, 0.5) !important;
-  background: rgba(245, 158, 11, 0.06) !important;
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.6) !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.18) !important;
 }
 
 .question-owner-badge {
-  font-size: 8px !important;
-  font-weight: 800 !important;
-  padding: 2px 6px !important;
-  border-radius: 4px !important;
+  font-size: 8.5px !important;
+  font-weight: 850 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
   background: #f59e0b !important;
   color: #18181b !important;
   letter-spacing: 0.06em !important;
@@ -1533,13 +1995,13 @@ body.presentation #integratedScoreboard .arena-team.question-owner {
 
 /* Pounce Live Indicator Badge */
 body.presentation #integratedScoreboard .pounce-live-tag {
-  font-size: 8px !important;
-  font-weight: 800 !important;
+  font-size: 8.5px !important;
+  font-weight: 850 !important;
   letter-spacing: 0.06em !important;
-  padding: 2px 6px !important;
-  border-radius: 4px !important;
-  background: rgba(14, 165, 233, 0.2) !important;
-  border: 1px solid rgba(14, 165, 233, 0.4) !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  background: rgba(14, 165, 233, 0.22) !important;
+  border: 1px solid rgba(14, 165, 233, 0.45) !important;
   color: #7dd3fc !important;
   flex: none !important;
 }
@@ -1548,50 +2010,52 @@ body.presentation #integratedScoreboard .pounce-live-tag {
 body.presentation #integratedScoreboard .arena-team-scores {
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 6px !important;
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
-  flex: none !important;
+  flex: 0 0 auto !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores > div {
-  padding: 3px 7px !important;
-  border-radius: 6px !important;
+  padding: 4px 8px !important;
+  border-radius: 7px !important;
   background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  min-width: 44px !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores small {
   display: block !important;
-  font-size: 7px !important;
-  font-weight: 750 !important;
+  font-size: 7.5px !important;
+  font-weight: 800 !important;
   letter-spacing: 0.06em !important;
-  color: #64748b !important;
+  color: #94a3b8 !important;
   margin-bottom: 1px !important;
   text-align: right !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores b {
-  color: #e2e8f0 !important;
-  font-size: 13px !important;
+  color: #ffffff !important;
+  font-size: 13.5px !important;
   font-variant-numeric: tabular-nums !important;
   text-align: right !important;
+  display: block !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores .total {
-  background: rgba(245, 158, 11, 0.08) !important;
-  border-color: rgba(245, 158, 11, 0.2) !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores .total small {
-  color: #d97706 !important;
+  color: #f59e0b !important;
 }
 
 body.presentation #integratedScoreboard .arena-team-scores .total b {
   color: #fbbf24 !important;
-  font-size: 14px !important;
-  font-weight: 800 !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1599,28 +2063,28 @@ body.presentation #integratedScoreboard .arena-team-scores .total b {
    -------------------------------------------------------------------------- */
 body.presentation #presentationBar {
   position: fixed !important;
-  bottom: 16px !important;
+  bottom: 18px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: min(1160px, calc(100vw - 32px)) !important;
+  width: min(1180px, calc(100vw - 32px)) !important;
   z-index: 9999 !important;
-  background: rgba(13, 17, 26, 0.94) !important;
+  background: rgba(13, 17, 26, 0.96) !important;
   backdrop-filter: blur(32px) !important;
   -webkit-backdrop-filter: blur(32px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 16px !important;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6) !important;
-  padding: 6px 14px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.65) !important;
+  padding: 7px 16px !important;
   transition: bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
 }
 
-/* Elevated Bar Position when Paddles Dock is Open */
+/* Elevated Bar Position when Paddles Dock is Open: 94px above bottom (dock is 76px tall with 18px floating gap) */
 body.presentation.presentation-score-controls #presentationBar {
-  bottom: 84px !important;
+  bottom: 94px !important;
 }
 
 /* Universal Input/Select/Button Height & Font Normalization */
@@ -1766,15 +2230,19 @@ body.presentation.presentation-score-controls #scoreDock {
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  height: 72px !important;
-  max-height: 72px !important;
+  height: 76px !important;
+  max-height: 76px !important;
   z-index: 9998 !important;
   background: rgba(10, 14, 24, 0.96) !important;
   backdrop-filter: blur(28px) !important;
   -webkit-backdrop-filter: blur(28px) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  padding: 8px 20px 10px !important;
+  padding: 8px 24px 10px !important;
   box-sizing: border-box !important;
+}
+
+body.presentation .score-paddle .paddle-top > span:last-child {
+  display: none !important;
 }
 
 body.presentation #scoreDock .dock-head {
