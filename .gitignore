@@ -1,0 +1,3 @@
+# Keep the old standalone score prototype as a local backup only.
+scoring/
+__pycache__/

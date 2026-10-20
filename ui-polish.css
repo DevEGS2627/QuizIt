@@ -1,0 +1,1575 @@
+/* ==========================================================================
+   EGS QUIZIT! · ALABASTER CREME LUXE & MIDNIGHT THEATER DESIGN SYSTEM
+   Inspired by Apple Keynote, Stripe Press, Linear & Scandinavian Modernism
+   Dual-Theme Engine · Balanced Symmetrical Visual Hierarchy · 100% Stage Isolation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. COLOR SYSTEM (WARM ALABASTER CREME LIGHT & MIDNIGHT THEATER DARK)
+   -------------------------------------------------------------------------- */
+:root,
+body[data-theme="egs"] {
+  /* Font Stacks */
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "SFProMono-Regular", Menlo, Consolas, monospace;
+
+  /* Warm Alabaster Creme Palette */
+  --canvas: #f8f6f0;                    /* Warm Alabaster Linen Canvas */
+  --surface: #ffffff;                   /* Pure Crisp Porcelain White */
+  --surface-raised: #f3efe6;            /* Soft Warm Oat Creme */
+  --surface-soft: #eae3d5;              /* Warm Sand Well */
+  --surface-glass: rgba(248, 246, 240, 0.92);
+  --line: #e4ded3;                      /* Delicate Cashmere Border */
+  --line-subtle: #ece7de;               /* Faint Hairline */
+  --line-strong: #d4ccbf;               /* Defined Edge */
+
+  /* Typographic Ink Colors */
+  --ink: #18181b;                       /* Deep Warm Espresso Charcoal */
+  --ink-secondary: #57534e;             /* Warm Stone */
+  --ink-muted: #78716c;                 /* Warm Taupe Slate */
+  --ink-subtle: #a8a29e;                /* Soft Taupe */
+
+  /* Accents */
+  --brand: #18181b;
+  --brand2: #1e3a8a;
+  --brand2-hover: #172554;
+  --brandSoft: #f3efe6;
+
+  --accent: #d97706;                    /* Warm Amber Gold */
+  --accent-light: #f59e0b;
+  --accentInk: #92400e;
+  --accentSoft: #fef3c7;
+  --accentGlow: rgba(217, 119, 6, 0.24);
+
+  --positive: #15803d;
+  --positiveSoft: #f0fdf4;
+  --negative: #be123c;
+  --negativeSoft: #fff1f2;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(24, 24, 27, 0.04), 0 1px 2px rgba(24, 24, 27, 0.02);
+  --shadow-md: 0 4px 16px -2px rgba(24, 24, 27, 0.05), 0 2px 4px rgba(24, 24, 27, 0.02);
+  --shadow-lg: 0 16px 36px -6px rgba(24, 24, 27, 0.07), 0 4px 12px rgba(24, 24, 27, 0.03);
+}
+
+/* Midnight Theater Theme (Dark Mode) */
+body[data-theme="midnight"] {
+  --canvas: #0c0f18;                    /* Deep Dark Midnight Canvas */
+  --surface: #141a29;                   /* Elevated Midnight Slate Surface */
+  --surface-raised: #1c2438;             /* Raised Dark Well */
+  --surface-soft: #232d46;               /* Inset Well */
+  --surface-glass: rgba(20, 26, 41, 0.94);
+  --line: #263148;                       /* Dark Hairline Border */
+  --line-subtle: #1c2437;
+  --line-strong: #33415e;
+
+  /* Typographic Ink Colors (Crisp Light Contrast) */
+  --ink: #f8fafc;                       /* Crisp White Heading */
+  --ink-secondary: #cbd5e1;              /* Soft Slate */
+  --ink-muted: #94a3b8;                  /* Muted Slate */
+  --ink-subtle: #64748b;
+
+  --brand: #0c0f18;
+  --brand2: #60a5fa;
+  --brand2-hover: #93c5fd;
+  --brandSoft: #1c2438;
+
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --accentInk: #18181b;
+  --accentSoft: rgba(245, 158, 11, 0.18);
+  --accentGlow: rgba(245, 158, 11, 0.35);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.75);
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--canvas) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, .brand-copy strong, .q-content, .arena-team-name {
+  font-family: var(--font-display) !important;
+}
+
+.egs-watermark {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP NAVIGATION
+   -------------------------------------------------------------------------- */
+body:not(.presentation) .topbar {
+  background: var(--surface-glass) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border-bottom: 1px solid var(--line) !important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03) !important;
+  color: var(--ink) !important;
+  min-height: 68px !important;
+  padding: 8px clamp(18px, 4.5vw, 64px) !important;
+}
+
+body:not(.presentation) .brand-copy strong {
+  color: var(--ink) !important;
+  font-size: 16px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+}
+
+body:not(.presentation) .brand-copy span {
+  color: var(--ink-muted) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+}
+
+body:not(.presentation) .nav-link {
+  min-height: 38px !important;
+  padding: 0 16px !important;
+  border-radius: 99px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: var(--ink-secondary) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:not(.presentation) .nav-link:hover {
+  background: var(--surface-raised) !important;
+  color: var(--ink) !important;
+  transform: translateY(-1px) !important;
+}
+
+body:not(.presentation) .nav-link.active {
+  background: var(--ink) !important;
+  color: var(--canvas) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16) !important;
+}
+
+body[data-theme="midnight"]:not(.presentation) .nav-link.active {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+body:not(.presentation) .status {
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 99px !important;
+  padding: 5px 12px !important;
+  color: var(--ink-secondary) !important;
+  font-size: 10px !important;
+  font-weight: 750 !important;
+}
+
+body:not(.presentation) .status:before {
+  background: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. STRICT VIEW ROUTING & ISOLATION (ZERO BLEED)
+   -------------------------------------------------------------------------- */
+
+/* HOME VIEW: Display ONLY Stage Question Mirror + Live Standings */
+body[data-app-view="home"]:not(.presentation) #adminToolbar,
+body[data-app-view="home"]:not(.presentation) .round-area,
+body[data-app-view="home"]:not(.presentation) #roundPicker,
+body[data-app-view="home"]:not(.presentation) .work-grid,
+body[data-app-view="home"]:not(.presentation) #scoreDock,
+body[data-app-view="home"]:not(.presentation) .statusline,
+body[data-app-view="home"]:not(.presentation) #adminControlsView,
+body[data-app-view="home"]:not(.presentation) #adminGate,
+body[data-app-view="home"]:not(.presentation) #drawHistoryPanel,
+body[data-app-view="home"]:not(.presentation) #marksHistoryPanel,
+body[data-app-view="home"]:not(.presentation) #statsView,
+body[data-app-view="home"]:not(.presentation) #integratedScoreboard .score-tools {
+  display: none !important;
+}
+
+body[data-app-view="home"]:not(.presentation) #homeLiveQuestion {
+  display: block !important;
+}
+
+body[data-app-view="home"]:not(.presentation) #integratedScoreboard {
+  display: block !important;
+}
+
+/* STATS VIEW */
+body[data-app-view="stats"]:not(.presentation) #homeLiveQuestion,
+body[data-app-view="stats"]:not(.presentation) #adminToolbar,
+body[data-app-view="stats"]:not(.presentation) .round-area,
+body[data-app-view="stats"]:not(.presentation) #roundPicker,
+body[data-app-view="stats"]:not(.presentation) #integratedScoreboard,
+body[data-app-view="stats"]:not(.presentation) .work-grid,
+body[data-app-view="stats"]:not(.presentation) #scoreDock,
+body[data-app-view="stats"]:not(.presentation) .statusline,
+body[data-app-view="stats"]:not(.presentation) #adminControlsView,
+body[data-app-view="stats"]:not(.presentation) #adminGate,
+body[data-app-view="stats"]:not(.presentation) #drawHistoryPanel,
+body[data-app-view="stats"]:not(.presentation) #marksHistoryPanel {
+  display: none !important;
+}
+
+body[data-app-view="stats"]:not(.presentation) #statsView[hidden] {
+  display: grid !important;
+}
+
+/* ADMIN VIEW */
+body[data-app-view="admin"]:not(.presentation) #homeLiveQuestion {
+  display: none !important;
+}
+
+body[data-app-view="admin"]:not(.presentation) #adminToolbar {
+  display: flex !important;
+}
+
+body[data-app-view="admin"]:not(.presentation) #adminControlsView[hidden] {
+  display: block !important;
+}
+
+body[data-app-view="admin"]:not(.presentation) .round-area,
+body[data-app-view="admin"]:not(.presentation) #roundPicker,
+body[data-app-view="admin"]:not(.presentation) #integratedScoreboard,
+body[data-app-view="admin"]:not(.presentation) #statsView {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. HOME STAGE-MIRROR QUESTION CARD
+   -------------------------------------------------------------------------- */
+body[data-app-view="home"]:not(.presentation) #page {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 32px clamp(18px, 3.5vw, 48px) 64px !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.home-live-question {
+  display: none;
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 22px !important;
+  padding: clamp(22px, 3vw, 36px) !important;
+  box-shadow: var(--shadow-md) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-bottom: 6px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-live-question::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--brand2) 100%);
+}
+
+.hlq-badge-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 16px !important;
+}
+
+.hlq-pulse-indicator {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 5px 12px !important;
+  border-radius: 99px !important;
+  background: var(--accentSoft) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  font-size: 10px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.hlq-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: var(--accent) !important;
+  box-shadow: 0 0 8px var(--accent) !important;
+  animation: radar-pulse 2s infinite !important;
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(217, 119, 6, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+}
+
+.hlq-meta-pill {
+  padding: 5px 12px !important;
+  border-radius: 99px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--ink-secondary) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.hlq-owner-pill {
+  background: var(--accentSoft) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  font-weight: 900 !important;
+}
+
+.hlq-tag-pill {
+  font-family: var(--font-mono) !important;
+}
+
+.hlq-text {
+  font-family: var(--font-display) !important;
+  font-size: clamp(22px, 2.5vw, 34px) !important;
+  font-weight: 750 !important;
+  line-height: 1.34 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--ink) !important;
+  margin: 16px 0 !important;
+}
+
+.hlq-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 18px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--line) !important;
+  color: var(--ink-muted) !important;
+  font-size: 11px !important;
+  font-weight: 650 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. HOME STANDINGS CARDS (100% BALANCED, PROPORTIONAL, ZERO VOIDS)
+   -------------------------------------------------------------------------- */
+body[data-app-view="home"]:not(.presentation) #integratedScoreboard {
+  display: block !important;
+  flex: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) #integratedScoreboard::before,
+body[data-app-view="home"]:not(.presentation) #integratedScoreboard::after {
+  display: none !important;
+  content: none !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-score-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-score-head h2 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--ink) !important;
+  margin: 0 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .score-kicker {
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.16em !important;
+  color: var(--accent) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .score-kicker::before {
+  display: none !important;
+}
+
+/* Symmetrical 3x2 Grid for Home Scoreboard */
+body[data-app-view="home"]:not(.presentation) .arena-teams {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: auto auto !important;
+  gap: 18px !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+@media (max-width: 960px) {
+  body[data-app-view="home"]:not(.presentation) .arena-teams {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body[data-app-view="home"]:not(.presentation) .arena-teams {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Kill all legacy pseudo-elements on arena-team */
+.arena-team::before,
+.arena-team::after,
+body[data-app-view="home"]:not(.presentation) .arena-team::before,
+body[data-app-view="home"]:not(.presentation) .arena-team::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Home Card Styling: Structured, Full-width, Compact */
+body[data-app-view="home"]:not(.presentation) .arena-team {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 18px 20px !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--line-strong) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-logo {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  display: grid !important;
+  place-items: center !important;
+  font-family: var(--font-display) !important;
+  font-weight: 850 !important;
+  font-size: 16px !important;
+  color: var(--ink) !important;
+  flex: 0 0 40px !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-name {
+  font-family: var(--font-display) !important;
+  font-size: 16px !important;
+  font-weight: 750 !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.015em !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-rank {
+  font-family: var(--font-display) !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  padding: 3px 9px !important;
+  border-radius: 99px !important;
+  background: var(--surface-raised) !important;
+  color: var(--ink-secondary) !important;
+  border: 1px solid var(--line) !important;
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+}
+
+.arena-team[data-rank="1"] .arena-team-rank {
+  background: var(--accentSoft) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  font-weight: 900 !important;
+}
+
+.arena-team[data-rank="2"] .arena-team-rank {
+  background: rgba(148, 163, 184, 0.16) !important;
+  color: var(--ink-secondary) !important;
+  border-color: rgba(148, 163, 184, 0.35) !important;
+  font-weight: 900 !important;
+}
+
+.arena-team[data-rank="3"] .arena-team-rank {
+  background: rgba(217, 119, 6, 0.12) !important;
+  color: #b45309 !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+  font-weight: 900 !important;
+}
+
+/* Symmetrical Architectural Score Wells - SPANNING 100% FULL CARD WIDTH */
+body[data-app-view="home"]:not(.presentation) .arena-team-scores {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: stretch !important;
+  border: none !important;
+  box-sizing: border-box !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores > div {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores small {
+  display: block !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--ink-muted) !important;
+  margin-bottom: 2px !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores b {
+  font-family: var(--font-display) !important;
+  font-size: 22px !important;
+  font-weight: 850 !important;
+  color: var(--ink) !important;
+  font-variant-numeric: tabular-nums !important;
+  line-height: 1.1 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores .total {
+  background: var(--accentSoft) !important;
+  border-color: var(--accent) !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores .total small {
+  color: var(--accent) !important;
+  font-weight: 900 !important;
+}
+
+body[data-app-view="home"]:not(.presentation) .arena-team-scores .total b {
+  color: var(--accent) !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. ADMIN WORKSPACE (SLEEK HORIZONTAL ACTION ROWS - NO GIANT EMPTY DESERTS)
+   -------------------------------------------------------------------------- */
+body[data-app-view="admin"]:not(.presentation) .admin-controls-view {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 0 16px 48px !important;
+}
+
+.admin-controls-heading {
+  margin-bottom: 24px !important;
+}
+
+.admin-controls-heading h1 {
+  font-size: clamp(26px, 2.8vw, 34px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--ink) !important;
+  margin: 0 0 6px !important;
+}
+
+.admin-controls-heading p {
+  color: var(--ink-secondary) !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.admin-action-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin-bottom: 32px !important;
+}
+
+.admin-action-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  padding: 16px 22px !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.admin-action-card:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--line-strong) !important;
+}
+
+.admin-action-icon {
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px !important;
+  border-radius: 12px !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--line) !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 18px !important;
+  color: var(--ink) !important;
+  margin: 0 !important;
+}
+
+.admin-action-card-present .admin-action-icon {
+  background: var(--accentSoft) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.admin-action-card > div {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.admin-action-card h2 {
+  font-size: 16px !important;
+  font-weight: 750 !important;
+  color: var(--ink) !important;
+  margin: 0 0 3px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.admin-action-card p {
+  color: var(--ink-secondary) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+.admin-action-card button,
+.admin-action-card .admin-action-buttons {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+.admin-action-buttons {
+  display: flex !important;
+  gap: 8px !important;
+}
+
+@media (max-width: 680px) {
+  .admin-action-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .admin-action-card button,
+  .admin-action-card .admin-action-buttons {
+    width: 100% !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. ADMIN TOOLBAR & SETTINGS PANELS
+   -------------------------------------------------------------------------- */
+#adminToolbar {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-sm) !important;
+  color: var(--ink) !important;
+  padding: 12px 20px !important;
+  margin-bottom: 24px !important;
+}
+
+.panel {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--shadow-sm) !important;
+  color: var(--ink) !important;
+}
+
+.panel header,
+.panel h2,
+.panel h3 {
+  color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. BUTTONS & INPUT CONTROLS
+   -------------------------------------------------------------------------- */
+button.primary,
+/* --------------------------------------------------------------------------
+   8. BUTTONS & INPUT CONTROLS (HIGH-END TACTILE FEEL)
+   -------------------------------------------------------------------------- */
+button.primary,
+.barbtn.primary,
+.primary {
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  font-weight: 750 !important;
+  padding: 9px 18px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body[data-theme="midnight"] button.primary,
+body[data-theme="midnight"] .barbtn.primary,
+body[data-theme="midnight"] .primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+button.primary:hover:not(:disabled),
+.barbtn.primary:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.01) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+button.primary:active:not(:disabled),
+.barbtn.primary:active:not(:disabled) {
+  transform: scale(0.97) !important;
+}
+
+#adminPresentBtn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  border: 1px solid #60a5fa !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+#adminPresentBtn:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
+  transform: translateY(-1px) scale(1.01) !important;
+}
+
+button.secondary,
+.barbtn,
+.secondary {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-sm) !important;
+  font-weight: 650 !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+button.secondary:hover:not(:disabled),
+.barbtn:hover:not(:disabled) {
+  background: var(--surface-raised) !important;
+  border-color: var(--line-strong) !important;
+  transform: translateY(-1px) !important;
+}
+
+button.secondary:active:not(:disabled),
+.barbtn:active:not(:disabled) {
+  transform: scale(0.97) !important;
+}
+
+input, select, textarea {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--ink) !important;
+  border-radius: 10px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accentSoft) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. PRESENTATION MODE (MINIMAL OBSIDIAN & CHAMPAGNE GOLD LUXE STAGE)
+   -------------------------------------------------------------------------- */
+body.presentation,
+body[data-app-view="presentation"] {
+  background-color: #080b14 !important;
+  background: 
+    radial-gradient(ellipse 900px 480px at 50% -70px, rgba(245, 158, 11, 0.12), transparent 70%),
+    radial-gradient(circle 800px at 50% 100%, rgba(15, 23, 42, 0.7), transparent 70%),
+    #090c16 !important;
+  color: #faf7f2 !important;
+  overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Strict Isolation: Hide all non-stage UI completely */
+body.presentation .topbar,
+body.presentation #adminToolbar,
+body.presentation .round-area,
+body.presentation #roundPicker,
+body.presentation .bank-panel,
+body.presentation .draw-modes,
+body.presentation .panel-heading,
+body.presentation .statusline,
+body.presentation #adminControlsView,
+body.presentation #adminGate,
+body.presentation #drawHistoryPanel,
+body.presentation #marksHistoryPanel,
+body.presentation #statsView,
+body.presentation #homeLiveQuestion {
+  display: none !important;
+}
+
+/* Unwrap work-grid & draw-panel as layout contents so #questionPanel is a direct grid child of #page */
+body.presentation .work-grid,
+body.presentation .draw-panel {
+  display: contents !important;
+}
+
+body.presentation .draw-panel > :not(#questionPanel) {
+  display: none !important;
+}
+
+/* Eliminate Paddle Wooden Handles/Pegs */
+.score-paddle:after,
+body.presentation .score-paddle:after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Presentation Grid: Expanded Question Stage (Scoreboard rail is compact 260px; Question Stage gets ~82% width) */
+body.presentation #page {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 260px !important;
+  grid-template-rows: 1fr !important;
+  gap: 16px !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 18px 22px 80px !important;
+  transition: padding 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.presentation.presentation-score-controls #page {
+  padding-bottom: 168px !important;
+}
+
+@media (max-width: 960px) {
+  body.presentation #page {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1.4fr 0.6fr !important;
+  }
+}
+
+/* Question Stage Card (Expansive, Minimalist Obsidian Glass with Subtle Warm Gold Hairline) */
+body.presentation #questionPanel {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  margin: 0 !important;
+  height: 100% !important;
+  padding: clamp(28px, 3.6vw, 48px) !important;
+  border-radius: 20px !important;
+  background: rgba(13, 17, 26, 0.94) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Sand & Dust Canvas Particle Overlay */
+.sand-dust-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+}
+
+/* Minimalist Warm Gold Hairline (No loud rainbow!) */
+body.presentation #questionPanel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 5%, rgba(245, 158, 11, 0.45) 50%, transparent 95%) !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Standby Empty State */
+body.presentation #questionPanel.empty-state {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.presentation #questionPanel.empty-state .empty-icon {
+  font-size: 42px !important;
+  color: #f59e0b !important;
+  margin-bottom: 12px !important;
+  opacity: 0.85 !important;
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.4)) !important;
+}
+
+body.presentation #questionPanel.empty-state h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(30px, 3.6vw, 44px) !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.02em !important;
+  color: #ffffff !important;
+  margin: 0 0 8px !important;
+}
+
+body.presentation #questionPanel.empty-state p {
+  font-size: 15px !important;
+  color: #94a3b8 !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  line-height: 1.5 !important;
+}
+
+/* Minimal Category & Tag Row */
+body.presentation #questionPanel .q-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 16px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.presentation #questionPanel .q-round-label {
+  font-family: var(--font-body) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 5px 14px !important;
+  border-radius: 99px !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  color: #fde68a !important;
+}
+
+body.presentation #questionPanel .q-tag {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 650 !important;
+  color: #cbd5e1 !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 5px 14px !important;
+  border-radius: 99px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Expansive Question Typography: Full Width & Optical Clarity (No awkward right void!) */
+body.presentation #questionPanel .q-content {
+  font-family: var(--font-display) !important;
+  font-size: clamp(34px, 4.2vw, 62px) !important;
+  font-weight: 750 !important;
+  line-height: 1.32 !important;
+  letter-spacing: -0.025em !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7) !important;
+  margin: auto 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-wrap: break-word !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Subtle Metadata Row */
+body.presentation #questionPanel .q-question-meta {
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  margin-top: 14px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. SAND & DUST PARTICLES & REVEAL ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes sandDustCrystallize {
+  0% {
+    opacity: 0;
+    filter: blur(12px) contrast(150%);
+    transform: translateY(14px) scale(0.985);
+    letter-spacing: 0.04em;
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(3px) contrast(110%);
+    transform: translateY(-1px) scale(1.002);
+    letter-spacing: -0.015em;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px) contrast(100%);
+    transform: translateY(0) scale(1);
+    letter-spacing: -0.025em;
+  }
+}
+
+.q-cinematic-reveal {
+  animation: sandDustCrystallize 540ms cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity, filter;
+}
+
+/* --------------------------------------------------------------------------
+   11. MINIMAL SCOREBOARD RAIL (UNIFIED OBSIDIAN FINISH, ZERO RAINBOWS)
+   -------------------------------------------------------------------------- */
+body.presentation #integratedScoreboard {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  height: 100% !important;
+  padding: 12px !important;
+  border-radius: 20px !important;
+  background: rgba(13, 17, 26, 0.94) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+body.presentation #integratedScoreboard .arena-score-head {
+  display: none !important;
+}
+
+body.presentation #integratedScoreboard .arena-teams {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: repeat(6, 1fr) !important;
+  gap: 6px !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* All Teams Share the SAME Unified Minimal Glass Finish */
+body.presentation #integratedScoreboard .arena-team {
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  color: #ffffff !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.presentation #integratedScoreboard .arena-team:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Eliminate All Rainbow Stripes */
+body.presentation #integratedScoreboard .arena-team:nth-child(n) {
+  border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+/* Unified Subtle Initial Avatar */
+body.presentation #integratedScoreboard .arena-team-logo,
+body.presentation #integratedScoreboard .arena-team-initial {
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 7px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  flex: none !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-name {
+  color: #f1f5f9 !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Clean Minimal Rank (Strictly overrides any [data-rank] styling) */
+body.presentation #integratedScoreboard .arena-team[data-rank] .arena-team-rank,
+body.presentation #integratedScoreboard .arena-team-rank {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+/* ONLY ONE Team Highlight: Active Question Turn */
+body.presentation #integratedScoreboard .arena-team.question-owner {
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+  background: rgba(245, 158, 11, 0.06) !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15) !important;
+}
+
+.question-owner-badge {
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  background: #f59e0b !important;
+  color: #18181b !important;
+  letter-spacing: 0.06em !important;
+  flex: none !important;
+  box-shadow: none !important;
+}
+
+/* Pounce Live Indicator Badge */
+body.presentation #integratedScoreboard .pounce-live-tag {
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  background: rgba(14, 165, 233, 0.2) !important;
+  border: 1px solid rgba(14, 165, 233, 0.4) !important;
+  color: #7dd3fc !important;
+  flex: none !important;
+}
+
+/* Clean Score Cells */
+body.presentation #integratedScoreboard .arena-team-scores {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  flex: none !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores > div {
+  padding: 3px 7px !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores small {
+  display: block !important;
+  font-size: 7px !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.06em !important;
+  color: #64748b !important;
+  margin-bottom: 1px !important;
+  text-align: right !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores b {
+  color: #e2e8f0 !important;
+  font-size: 13px !important;
+  font-variant-numeric: tabular-nums !important;
+  text-align: right !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores .total {
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.2) !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores .total small {
+  color: #d97706 !important;
+}
+
+body.presentation #integratedScoreboard .arena-team-scores .total b {
+  color: #fbbf24 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. PRESENTATION CONTROLS (UNIFIED, MATCHED BUTTONS & CONTROLS)
+   -------------------------------------------------------------------------- */
+body.presentation #presentationBar {
+  position: fixed !important;
+  bottom: 16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(1160px, calc(100vw - 32px)) !important;
+  z-index: 9999 !important;
+  background: rgba(13, 17, 26, 0.94) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6) !important;
+  padding: 6px 14px !important;
+  transition: bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* Elevated Bar Position when Paddles Dock is Open */
+body.presentation.presentation-score-controls #presentationBar {
+  bottom: 84px !important;
+}
+
+/* Universal Input/Select/Button Height & Font Normalization */
+body.presentation #presentationBar select,
+body.presentation #presentationBar input,
+body.presentation #presentationBar button {
+  height: 38px !important;
+  border-radius: 10px !important;
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Round Picker */
+body.presentation #presentationBar .present-round-picker {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex: 0 0 auto !important;
+}
+
+body.presentation #presentationBar .present-round-picker span {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+body.presentation #presentationBar select,
+body.presentation #presentationBar input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f1f5f9 !important;
+  padding: 0 12px !important;
+}
+
+body.presentation #presentationBar select:focus,
+body.presentation #presentationBar input:focus {
+  outline: none !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Reel Window: Remove Strikethrough Line */
+body.presentation #presentationBar .reel-marker {
+  display: none !important;
+}
+
+body.presentation #presentationBar .reel-wrap {
+  height: 38px !important;
+  border-radius: 10px !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.presentation #presentationBar .reel-item {
+  height: 38px !important;
+  line-height: 38px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #fbbf24 !important;
+}
+
+body.presentation #presentationBar button {
+  cursor: pointer !important;
+  padding: 0 14px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* HERO BUTTON: Draw next question (Warm Amber Gold) */
+body.presentation #presentationBar #presentationDraw {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  border: 1px solid #f59e0b !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 0 16px !important;
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35) !important;
+}
+
+body.presentation #presentationBar #presentationDraw:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.5) !important;
+}
+
+body.presentation #presentationBar #presentationDraw:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+/* SECONDARY BUTTONS: Reveal tag, Score, Lock */
+body.presentation #presentationBar #presentationFind,
+body.presentation #presentationBar #presentationScoreToggle,
+body.presentation #presentationBar #operatorLockPresentation {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+body.presentation #presentationBar #presentationFind:hover:not(:disabled),
+body.presentation #presentationBar #presentationScoreToggle:hover,
+body.presentation #presentationBar #operatorLockPresentation:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+body.presentation.presentation-score-controls #presentationBar #presentationScoreToggle {
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  color: #fbbf24 !important;
+}
+
+/* EXIT BUTTON */
+body.presentation #presentationBar #exitPresentation {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  color: #fca5a5 !important;
+}
+
+body.presentation #presentationBar #exitPresentation:hover {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. SCORE DOCK PADDLES (MINIMAL, UNIFIED TACTILE PADDLES)
+   -------------------------------------------------------------------------- */
+body.presentation:not(.presentation-score-controls) #scoreDock {
+  display: none !important;
+}
+
+body.presentation.presentation-score-controls #scoreDock {
+  display: block !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 72px !important;
+  max-height: 72px !important;
+  z-index: 9998 !important;
+  background: rgba(10, 14, 24, 0.96) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 8px 20px 10px !important;
+  box-sizing: border-box !important;
+}
+
+body.presentation #scoreDock .dock-head {
+  display: none !important;
+}
+
+body.presentation .score-paddles {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 10px !important;
+  height: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+body.presentation .score-paddle {
+  min-height: 54px !important;
+  max-height: 54px !important;
+  border-radius: 10px !important;
+  padding: 6px 12px !important;
+  color: #f1f5f9 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.presentation .score-paddle:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.presentation .score-paddle:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+.score-paddle .paddle-top {
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #94a3b8 !important;
+}
+
+.score-paddle strong {
+  font-size: 11px !important;
+  font-weight: 650 !important;
+  color: #e2e8f0 !important;
+}
+
+.score-paddle .paddle-value {
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  align-self: flex-end !important;
+}
+
+.score-paddle[data-mark="correct"] .paddle-value { color: #34d399 !important; }
+.score-paddle[data-mark="wrong"] .paddle-value { color: #94a3b8 !important; }
+.score-paddle[data-mark="pounceRegister"] .paddle-value { color: #38bdf8 !important; }
+.score-paddle[data-mark="pounceCorrect"] .paddle-value { color: #a78bfa !important; }
+.score-paddle[data-mark="pounceWrong"] .paddle-value { color: #f87171 !important; }
+.score-paddle[data-mark="finalCorrect"] .paddle-value { color: #fbbf24 !important; }
+
+.score-paddle.armed {
+  outline: 2px solid #fbbf24 !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: #f59e0b !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. MODALS, TOASTS, & AUDIT HISTORY
+   -------------------------------------------------------------------------- */
+.score-modal,
+.modal {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--shadow-lg) !important;
+  color: var(--ink) !important;
+}
+
+.score-modal header,
+.modal h2 {
+  color: var(--ink) !important;
+  font-family: var(--font-display) !important;
+}
+
+.toast {
+  background: rgba(24, 24, 27, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 99px !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+  padding: 10px 20px !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
