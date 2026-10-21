@@ -3842,3 +3842,149 @@ body.presentation .score-paddle .paddle-value {
   font-variant-numeric: tabular-nums !important;
   margin-left: auto !important;
 }
+
+/* ==========================================================================
+   TOPBAR LOCK & UNLOCK BUTTON + LOCKED OVERLAY BANNER
+   ========================================================================== */
+
+.nav-link.lock-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted, #94a3b8);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto !important;
+}
+
+.nav-link.lock-toggle-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.nav-link.lock-toggle-btn.is-locked {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.22), rgba(245, 158, 11, 0.25)) !important;
+  border: 1px solid rgba(245, 158, 11, 0.6) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.35) !important;
+  animation: pulseLockPill 2s infinite ease-in-out;
+}
+
+.nav-link.lock-toggle-btn.is-locked:hover {
+  background: linear-gradient(135deg, #f59e0b, #ef4444) !important;
+  color: #0f172a !important;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.6) !important;
+}
+
+@keyframes pulseLockPill {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.55);
+    border-color: rgba(245, 158, 11, 0.9);
+  }
+}
+
+/* Floating Bottom Unlock Banner */
+.operator-locked-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  background: rgba(10, 15, 30, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(245, 158, 11, 0.3);
+  padding: 8px 10px 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: auto !important;
+  animation: slideUpLockBanner 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: calc(100vw - 32px);
+}
+
+.operator-locked-banner[hidden] {
+  display: none !important;
+}
+
+@keyframes slideUpLockBanner {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.locked-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.locked-banner-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.locked-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.locked-banner-text strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.01em;
+}
+
+.locked-banner-text span {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.unlock-banner-btn {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+  color: #0b1120 !important;
+  font-family: inherit;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  padding: 8px 20px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  letter-spacing: 0.02em;
+  pointer-events: auto !important;
+  white-space: nowrap;
+}
+
+.unlock-banner-btn:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.65) !important;
+  background: linear-gradient(135deg, #fef08a, #f59e0b) !important;
+}
+
+.unlock-banner-btn:active {
+  transform: translateY(0) scale(0.98);
+}
